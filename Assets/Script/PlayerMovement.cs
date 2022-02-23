@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float movementSpeed = 10f;
-    public SpawnManager spawnManager;
+    public float movementSpeed = 60f;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -23,8 +23,6 @@ public class PlayerMovement : MonoBehaviour
         transform.Translate(new Vector3(hMovement, 0, vMovement) * Time.deltaTime);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        spawnManager.SpawnTriggerEntered();
-    }
+    
+    
 }
