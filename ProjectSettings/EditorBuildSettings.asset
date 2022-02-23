@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Level 1 Endless Runner 1.unity
+    guid: f41c0b449dcc79d4895a22de02919d4c
   m_configObjects: {}
