@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     bool active = true;
     bool grounded;
     float up;
-    
+
 
     void Start()
     {
@@ -50,9 +50,9 @@ public class PlayerController : MonoBehaviour
             animasi.SetBool("grounded", false);
         }
 
-
-        transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed, Space.World);
         
+        transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed, Space.World);
+
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
@@ -60,8 +60,8 @@ public class PlayerController : MonoBehaviour
             {
                 trans.Translate(Vector3.left * Time.deltaTime * leftRightSpeed);
                 animasi.Play("kiri");
-                
-                
+
+
             }
 
         }
@@ -72,29 +72,38 @@ public class PlayerController : MonoBehaviour
             {
                 trans.Translate(Vector3.left * Time.deltaTime * leftRightSpeed * -1);
                 animasi.Play("kanan");
-                
-                
+
+
             }
 
         }
-            
-            if (Input.GetButtonDown("Jump") && grounded)
-            
-        {
-                     animasi.Play("jump");
-                     
-                     rig.AddForce(Vector3.up * 4f, ForceMode.Impulse);
-                     
-             
 
-            
-            
+        if (Input.GetButtonDown("Jump") && grounded)
+
+        {
+            animasi.Play("jump");
+
+            rig.AddForce(Vector3.up * 4f, ForceMode.Impulse);
+
+
+
+
+
         }
 
-            
+
     }
 
 
+    private void OnTriggerEnter(Collider collider)
+    {
+        if (collider.tag == "Finish")
+        {
+            animasi.Play("menang");
+        }
 
-   
+
+    }
+
+    
 }
