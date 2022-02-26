@@ -14,6 +14,7 @@ public class Button : MonoBehaviour
     public void QuitG()
     {
         Application.Quit();
+        Debug.Log("Keluar");
     }
     
 }
