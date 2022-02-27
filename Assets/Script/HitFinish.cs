@@ -7,7 +7,7 @@ public class HitFinish : MonoBehaviour
    
     
 {
-
+    public GameObject finisheOver;
     public PlayerController diam;
 
     private void OnTriggerEnter(Collider collider)
@@ -18,6 +18,7 @@ public class HitFinish : MonoBehaviour
             Time.timeScale = 1f;
             //atau pake animasi ya?
             diam.enabled = false;
+            finisheOver.SetActive(true);
         }
     }
 

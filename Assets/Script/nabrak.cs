@@ -1,5 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
+using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class nabrak : MonoBehaviour
@@ -7,10 +10,13 @@ public class nabrak : MonoBehaviour
 {
     public PlayerController diam;
     Animator animasi;
+   
+    public GameObject gameOver;
 
     void Start()
     {
         animasi = this.GetComponent<Animator>();
+        
     }
 
    void OnCollisionEnter(Collision collision)
@@ -19,8 +25,14 @@ public class nabrak : MonoBehaviour
         {
             animasi.Play("jatuh");
             diam.enabled = false;
+            
+            gameOver.SetActive(true);
+           
         }
 
 
     }
+
+    
+    
 }
