@@ -10,17 +10,17 @@ public class MenuInGame : MonoBehaviour
 
     public void MenuLevel()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void level2()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 
     public void level3()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
     }
     public void quit()
     {
