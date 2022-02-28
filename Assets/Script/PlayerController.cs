@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Audio;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -15,6 +16,8 @@ public class PlayerController : MonoBehaviour
     bool active = true;
     bool grounded;
     float up;
+    public AudioSource clip;
+    public AudioSource stop;
 
 
     void Start()
@@ -100,6 +103,8 @@ public class PlayerController : MonoBehaviour
         if (collider.tag == "Finish")
         {
             animasi.Play("menang");
+            clip.Play();
+            stop.Stop();
         }
 
 
