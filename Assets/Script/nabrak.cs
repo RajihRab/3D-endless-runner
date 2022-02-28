@@ -30,6 +30,15 @@ public class nabrak : MonoBehaviour
            
         }
 
+        if (collision.collider.tag == "Enemy")
+        {
+            animasi.Play("jatuh");
+            diam.enabled = false;
+
+            gameOver.SetActive(true);
+
+        }
+
 
     }
 
