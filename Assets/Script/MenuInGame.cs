@@ -13,14 +13,19 @@ public class MenuInGame : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public void level2()
+    public void Level1()
     {
         SceneManager.LoadScene(3);
     }
 
-    public void level3()
+    public void level2()
     {
         SceneManager.LoadScene(4);
+    }
+
+    public void level3()
+    {
+        SceneManager.LoadScene(5);
     }
     public void quit()
     {

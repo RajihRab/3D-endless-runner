@@ -5,10 +5,10 @@ using UnityEngine;
 public class EnemyUI : MonoBehaviour
 {
 
-    private float movementSpeed = 8f;
+    private float movementSpeed = 7f;
     private Rigidbody enemyrb;
     private GameObject player;
-    private float reactDistan = 50f;
+    private float reactDistan = 40f;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,9 +27,9 @@ public class EnemyUI : MonoBehaviour
 
         if(distance <= reactDistan)
         {
-            if(distance > 5f)
+            if(distance > 8f)
             {
-                targetPos.z += (distance / 2f);
+                targetPos.z += (distance / 3f);
             }
 
             lookDirection = (targetPos - transform.position).normalized;
@@ -38,7 +38,7 @@ public class EnemyUI : MonoBehaviour
         else
         {
             lookDirection = (targetPos - transform.position).normalized;
-            enemyrb.AddForce(lookDirection * movementSpeed * 0.2f);
+            enemyrb.AddForce(lookDirection * movementSpeed * 0.3f);
         }
         
         if((transform.position.z - player.transform.position.z) < -3f)
